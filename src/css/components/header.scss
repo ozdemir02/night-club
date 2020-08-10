@@ -8,28 +8,22 @@
     transition: all 0.2s ease-in-out;
     position: absolute;
     z-index: 1;
-    font-family: 'Ubuntu', sans-serif;
-    line-height: 1.1;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #ffffff; 
-    margin-left: 6%;
-    margin-top: 15px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    margin-top: 16px;
+    margin-left: 40px;
 }
 
 nav {
+    border: 2px solid #ff2a70;
     transition: all 0.5s ease-in-out;
     display: grid;
     background-color: none;
     color: white;
-    background-color: #0f1014;
+    background-color: #030203;
     width: 100%;
     grid-template-columns: 1fr 0.2fr;
     grid-auto-rows: auto;
     align-items: center;
-    height: 50px;
+    height: 75px;
 }
 
 @keyframes leftToRight {
@@ -42,13 +36,35 @@ nav {
     display: grid;
 }
 
+.nav__triangle-top {
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #ff2a70 transparent transparent transparent;
+}
+
+.nav__triangle-bottom {
+    width: 0;
+    bottom: 0;
+    height: 0;
+    right: 0;
+    position: absolute;
+    border-style: solid;
+    border-width: 0 0 50px 50px;
+    border-color: transparent transparent #ff2a70 transparent;
+}
+
 nav ul {
     display: none;
     position: relative;
 	grid-template-rows: repeat(4, 1fr);
 	height: 300px;
 	width: 100%;
-	background-color: #0f1014;
+    background-color: #030203;
 	grid-column-start: 1;
     grid-column-end: 3;
     transition: all 0.1s ease-in-out;
@@ -66,7 +82,7 @@ ul li a {
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.1;
-    font-weight: 500;
+    font-weight: lighter;
     text-transform: uppercase;
     color: #ffffff; 
     cursor: pointer;
@@ -111,8 +127,8 @@ ul li a {
     }
 
     .header__portfolio{
-        margin-top: 13px;
-        margin-left: 40px;
+        margin-top: 16px;
+        margin-left: 70px;
     }
 
     #checkboxLabel {
@@ -145,6 +161,7 @@ ul li a {
         grid-column-end: 3;
         list-style-type: none;
         margin: 0;
+        margin-right: 200px;
         padding: 0;
         align-items: center;
         align-content: center;
@@ -155,16 +172,23 @@ ul li a {
         width: 100%;
         grid-template-columns: 44% 56%;
         align-items: center;
-        height: 50px;
+        height: 75px;
         margin: 0;
     }
 
     nav ul li {
-        margin-right: 20px;
+        margin-right: 40px;
         padding: 0;
-        float: right;
         text-decoration: none;
     }
+
+    nav ul li:hover {
+        text-underline-position: below;
+        text-decoration: underline #ff2a70;
+
+    }
+
+    
 
     
     nav h1 {
