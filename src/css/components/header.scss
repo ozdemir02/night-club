@@ -7,12 +7,14 @@
 .header__portfolio{
     transition: all 0.2s ease-in-out;
     position: absolute;
-    color: white;
     z-index: 1;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.1;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff; 
     margin-left: 6%;
     margin-top: 15px;
-    font-size: 1.3rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
@@ -62,9 +64,11 @@ nav ul {
 ul li a {
     transition: all 0.1s ease-in-out;
     text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-family: "Verdana";
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.1;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff; 
     cursor: pointer;
 }
 
