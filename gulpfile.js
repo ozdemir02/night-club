@@ -62,7 +62,7 @@ function images(done) {
 }
 
 function watchImages() {
-	gulp.watch("./src/images/*", { ignoreInitial: false }, images);
+	gulp.watch("./src/images/**/*", { ignoreInitial: false }, images);
 }
 
 gulp.task("dev", function(done) {
