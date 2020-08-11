@@ -2,46 +2,24 @@ let mainNav = document.getElementById('uList');
 let navBarToggle = document.querySelector("#checkboxLabel");
 let checbox = document.querySelector("#checkbox");
 
-// Checkbox unchecked when site width is over 767px
-setInterval(() => {
-  var mq = window.matchMedia( "(max-width: 767px)" );
-  if (mq.matches) {}
-  else {
-    checbox.checked = false
-  }
-}, 1000);
-
-navBarToggle.addEventListener("click", function() {
-  navBarToggle.style.transform = "scale(1.2)";
-  setTimeout(function(){
-    navBarToggle.style.transform = "scale(1)";
-  }, 100)
-});
-
 // Give class active when you click on the Burger Menu
 navBarToggle.addEventListener("click", function() {
   mainNav.classList.toggle('active');
   if (mainNav.classList == "") {
     mainNav.id = "navLeftToRight";
+    mainNav.style=""
     setTimeout(function(){
       mainNav.id = "uList";
     }, 500);
   }
   else {
+    mainNav.style="animation: rightToLeft 0.6s ease;";
     mainNav.id = "uList";
   }
 });
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("activeJob");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "flex") {
-      dropdownContent.style.display = "none";
-      dropdownContent.style.background.color = "#0f1014";
-      dropdownContent.style.color = "white";
-    } else {
-      dropdownContent.style.display = "flex";
-    }
-  });
-}
+fetch("http://localhost:4000/gallery-photos", {
+  "method": "GET"
+})
+.then(response => console.log(response))
+.catch(err => console.error(err));

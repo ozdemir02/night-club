@@ -18,7 +18,10 @@ nav {
     display: grid;
     background-color: none;
     color: white;
-    background-color: #030203;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../images/header_bg_2.jpg');
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-size: 100%;
     width: 100%;
     grid-template-columns: 1fr 0.2fr;
     grid-auto-rows: auto;
@@ -63,8 +66,8 @@ nav {
 nav ul {
     display: none;
     position: relative;
-	grid-template-rows: repeat(4, 1fr);
-	height: 300px;
+	grid-template-rows: repeat(7, 1fr);
+	height: 100vh;
 	width: 100%;
     background-color: #030203;
 	grid-column-start: 1;
@@ -77,6 +80,8 @@ nav ul {
     text-align: center;
     justify-content: center;
     text-decoration: none;
+    margin-top: -2px;
+    z-index: 2;
 }
 
 ul li a {
@@ -88,22 +93,26 @@ ul li a {
     text-transform: uppercase;
     color: #ffffff; 
     cursor: pointer;
+    z-index: 3;
 }
 
 #checkbox {
-    position: relative;
     display: none;
 }
 
-
-#checkbox:checked + #uList {
-    transition: all 0.1s ease-in-out;
-    display: grid;
-    @keyframes rightToLeft {
-        from {transform: translateX(100vw)}
-        to {transform: translateX(0vw)}
+@keyframes rightToLeft {
+    from {
+        transform: translateX(100vw); 
     }
-    animation: rightToLeft 0.6s ease;
+    to {
+        transform: translateX(0vw); 
+    }}
+
+.active {
+    display: grid;
+    margin-left: -2px;
+    position: sticky;
+    z-index: 2;
 }
 
 #checkboxLabel {
@@ -111,7 +120,9 @@ ul li a {
     content: url(../../assets/images/bmenu.svg);
     fill: white;
     outline: none;
-    position: relative;
+    position: absolute;
+    right: 0;
+    z-index: 6;
     display: inline-block;
     grid-column: 2;
     height: 50px;
@@ -119,7 +130,12 @@ ul li a {
     margin-right: 30px;
     background-size: cover;
     border: none;
+    cursor: pointer;
+
 }
+
+.activeJob {
+    color: white; }  
 
 :focus {outline:none;}
 
@@ -144,11 +160,13 @@ ul li a {
     #checkboxLabel {
         display: none;
         content: none;
+        position: absolute;
     }
 
     #checkbox {
         display: none;
         content: none;
+        position: absolute;
     }
 
     .header {
