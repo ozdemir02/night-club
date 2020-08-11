@@ -2,15 +2,6 @@ let mainNav = document.getElementById('uList');
 let navBarToggle = document.querySelector("#checkboxLabel");
 let checbox = document.querySelector("#checkbox");
 
-window.addEventListener('scroll', function(e){
-  if (window.scrollY >= 100) {
-    document.querySelector("nav").style.backgroundColor = "#14161b";
-  }
-  else {
-    document.querySelector("nav").style.backgroundColor = "#0f1014";
-  }
-});
-
 // Checkbox unchecked when site width is over 767px
 setInterval(() => {
   var mq = window.matchMedia( "(max-width: 767px)" );
