@@ -1,7 +1,38 @@
 
-.header {
-    width: 100%;
-    
+.header__image {
+    width: 100vw;
+    height: 400px;
+    background-image: url('../images/header_bg_2.jpg');
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image__text {
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    font-size: 0.6rem;
+    margin-bottom: -5px;
+    font-weight: lighter;
+}
+
+.image__logo {
+    width: 200px;
+    margin-bottom: -3px;
+    margin-left: -3px;
+}
+
+.image__underline {
+    width: 150px;
+    height: 35px;
+    opacity: 0.9;
 }
 
 .header {
