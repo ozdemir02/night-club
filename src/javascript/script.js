@@ -21,5 +21,11 @@ navBarToggle.addEventListener("click", function() {
 fetch("http://localhost:4000/gallery-photos", {
   "method": "GET"
 })
-.then(response => console.log(response))
+.then(response => {console.log(response)
+
+  
+
+
+})
+
 .catch(err => console.error(err));
