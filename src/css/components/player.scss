@@ -1,0 +1,23 @@
+.nav__triangle-top {
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #ff2a70 transparent transparent transparent;
+}
+
+.nav__triangle-bottom {
+    width: 0;
+    bottom: 0;
+    height: 0;
+    right: 0;
+    z-index: 2;
+    position: absolute;
+    border-style: solid;
+    border-width: 0 0 50px 50px;
+    border-color: transparent transparent #ff2a70 transparent;
+}

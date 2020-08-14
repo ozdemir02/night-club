@@ -11,6 +11,162 @@
     font-size: 1.5em;
 }
 
+@keyframes fontlargener {
+    from { font-size: 0.7em; opacity: 0; }
+    to { font-size: 1em; opacity: 1;}
+  }
+
+  @keyframes rightToLeft {
+    from { margin-left: 10px; opacity: 0;}
+    to { margin-left: 0px; opacity: 1; }
+  }
+
+.welcome__triangle-top {
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    border-style: solid;
+    border-width: 100px 100px 0 0;
+    border-color: #ff2a70 transparent transparent transparent;
+    display: none;
+}
+
+.welcome__triangle-bottom {
+    width: 0;
+    bottom: 0;
+    height: 0;
+    right: 0;
+    z-index: 2;
+    position: absolute;
+    border-style: solid;
+    border-width: 0 0 100px 100px;
+    border-color: transparent transparent #ff2a70 transparent;
+    display: none;
+}
+
+.image__title--text {
+    animation: fontlargener 1s 1;
+    top: 30%;
+    width: 60px;
+    height: 50px;
+    align-items: center;
+    left: 42.3%;
+    right: 42%;
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: -3;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+}
+
+.text__name {
+    animation: fontlargener 1s 1;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    display: none;
+    bottom: 45%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    color: white;
+    z-index: -3;
+    font-size: 1em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+    
+}
+
+.text__desc {
+    animation: rightToLeft 1s 1;
+    font-size: 0.65em;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: none;
+    bottom: 20%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    color: white;
+    z-index: -3;
+
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently */
+}
+
+
+.image__img:hover ~ .image__title--text{
+    display: block;
+    z-index: 1;
+}
+
+.image__img:hover ~ .text__name {
+    display: block;
+    z-index: 1;
+}
+
+.image__img:hover ~ .text__desc {
+    display: block;
+    z-index: 1;
+}
+
+
+
+.image__figure {
+    position: relative;
+    margin: 0;
+    padding: 0 ;
+    margin-top: 50px;
+    width: 400px;
+    margin-right: 25px;
+    margin-left: 25px;
+    height: 100%;
+    max-height: 512px;
+}
+
+.image__figure:hover {
+    border-bottom: 2px solid #ff2a70;
+    border-top: 2px solid #ff2a70;
+}
+
+.image__img:hover {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    filter: brightness(0);
+}
+
+.image__img:hover ~ .welcome__triangle-top {
+    cursor: pointer;
+    display: block;
+}
+
+.image__img:hover ~ .welcome__triangle-bottom {
+    cursor: pointer;
+    display: block;
+}
+
 .welcome__box {
     display: flex;
     flex-direction: column;
@@ -55,8 +211,11 @@
 }
 
 .image__img {
-    margin-top: 50px;
-    width: 93%;
+    width: 100%;
+    height: 512px;
+    min-height: 512px;
+    margin: 0;
+    padding: 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -66,10 +225,8 @@
     }
 
     .image__img {
-        height: 500px;
-        width: 400px;
-        margin-right: 30px;
-        margin-left: 30px;
+        height: 100%;
+        width: 100%;
     }
 
     .welcome__box {
