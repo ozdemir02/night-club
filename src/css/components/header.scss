@@ -13,27 +13,58 @@
     align-items: center;
 }
 
+
+@keyframes Anime3d {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes AnimateTopDown {
+    from {
+        margin-top: -70px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
 .image__text {
+    opacity: 0;
+    animation: AnimateTopDown 1.5s forwards;
+    animation-delay: 2s;
     color: white;
     text-transform: uppercase;
     font-family: 'Ubuntu', sans-serif;
     line-height: 1.1;
     letter-spacing: 5px;
     font-size: 0.6rem;
-    margin-bottom: -5px;
     font-weight: lighter;
 }
 
 .image__logo {
+    opacity: 0;
+    animation: Anime3d 1.5s forwards;
+    animation-delay: 0.5s;
     width: 200px;
-    margin-bottom: -3px;
+    margin-bottom: 150px;
     margin-left: -3px;
+    position: absolute;
 }
 
 .image__underline {
+    position: absolute;
+    animation: AnimateTopDown 1.5s forwards;
+    animation-delay: 2s;
     width: 150px;
     height: 35px;
-    opacity: 0.9;
+    opacity: 0;
+    margin-bottom: -20px;
 }
 
 .header {

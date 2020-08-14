@@ -9,6 +9,13 @@
     align-items: center;
     font-size: 1.5em;
  }
+ 
+ .events__article {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 2900px;
+ }
 
 .events__text {
     color: white;
